@@ -21,3 +21,5 @@ class Solution {
         find(arr , i , j+1);
     }
 }
+
+//TC-> O(m*n)
