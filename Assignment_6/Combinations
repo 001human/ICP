@@ -1,0 +1,22 @@
+class Solution {
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>>ans=new ArrayList<>();
+        List<Integer>temp=new ArrayList<>();
+        fun(ans,temp,n,k,1);
+        return ans;
+    }
+
+        public static void fun(List<List<Integer>>ans,List<Integer>temp,int n,int k,int index){
+        if(k==0){
+            ans.add(new ArrayList(temp));
+            return;
+        }
+        
+        if(index>n) return;
+            temp.add(index);
+            fun(ans,temp,n,k-1,index+1);
+            temp.removeLast();
+            fun(ans,temp,n,k,index+1);
+        
+    }
+}
